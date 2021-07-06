@@ -12,7 +12,18 @@ var Colors;
     Colors[Colors["white"] = 9] = "white";
 })(Colors || (Colors = {}));
 function getColorCode(color) {
-    var splitColorName = color.split('-');
-    console.log(splitColorName);
+    var colorArray = color.split('-');
+    if (colorArray.length < 2) {
+        console.log('Error: Must have at least two colors');
+        return;
+    }
+    var firstColor = colorArray[0];
+    var secondColor = colorArray[1];
+    for (var color_1 in Colors) {
+        if (firstColor === color_1 || secondColor === color_1) {
+            console.log(Colors[color_1]);
+            // let firstNumCode = Colors[color]
+        }
+    }
 }
-getColorCode('brown-green');
+getColorCode('green-brown');
